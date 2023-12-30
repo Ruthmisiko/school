@@ -19,11 +19,18 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'firstname',
+        'lastname',
         'email',
         'password',
+        'address',
+        'city',
+        'country',
+        'postal',
+        'about'
     ];
 
-    /**
+     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
@@ -40,6 +47,16 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
+
+    /**
+     * Always encrypt the password when it is updated.
+     *
+     * @param $value
+    * @return string
+    */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }
