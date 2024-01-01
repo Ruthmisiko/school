@@ -479,4 +479,14 @@
             },
         });
     </script>
+    @if(Session::has('sweet_alert'))
+    <script>
+        Swal.fire({
+            icon: '{{ Session::get("sweet_alert.type") }}',
+            title: '{{ Session::get("sweet_alert.message") }}',
+            showConfirmButton: false,
+            timer: 1500,
+        });
+    </script>
+@endif
 @endpush
