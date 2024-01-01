@@ -6,7 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\StudentsController;
 
 
 
@@ -39,6 +39,9 @@ Route::get('/reset-password', [ResetPassword::class, 'show'])->name('reset-passw
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('pages.dashboard');
 
+Route::get('/students', [StudentsController::class, 'index'])->name('students');
 
+Route::post('/students/store', [StudentsController::class, 'store'])->name('students.store');
 
+Route::get('/students/get', [StudentsController::class, 'getStudents'])->name('students.get');
 

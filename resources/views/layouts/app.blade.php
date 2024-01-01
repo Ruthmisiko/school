@@ -20,6 +20,8 @@
 <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
 <!-- CSS Files -->
 <link id="pagestyle" href="{{ asset('assets/css/argon-dashboard.css') }}" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 
 </head>
 
